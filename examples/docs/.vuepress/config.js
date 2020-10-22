@@ -5,8 +5,12 @@ module.exports = {
     repo: 'https://github.com/zxh742755443/zxh-ui',
     sidebar: [
       {
-        path:'/infinite-scroll/',
-        title:'无限滚动'
+        path: '/',
+        title: '简介'
+      },
+      {
+        path: '/infinite-scroll/',
+        title: 'InfiniteScroll 无限滚动'
       }
     ]
   },
