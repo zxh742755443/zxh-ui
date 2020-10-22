@@ -25,7 +25,7 @@ const options = {
  * @returns {boolean}
  */
 function isScroll (el) {
-  let overflowY = el.style['overflowY']
+  let overflowY = window.getComputedStyle(el)['overflowY']
   return overflowY.match(/(scroll|auto)/)
 }
 
