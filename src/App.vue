@@ -1,21 +1,11 @@
 <template>
-    <div id="app"
-         v-infinite-scroll="test"
-         :infinite-scroll-disabled="disabled"
-         infinite-scroll-delay="1000"
-         infinite-scroll-distance="0"
-    ><div v-for="item in num" :key="item">{{item}}</div>
-  </div>
+  <z-keyboard @keypress="keypress"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
   data () {
     return {
       num: 40,
@@ -23,13 +13,8 @@ export default {
     }
   },
   methods: {
-    test () {
-      console.log('test-----------', this)
-      if (this.num >= 90) {
-        this.disabled = true
-        return
-      }
-      this.num += 10
+    keypress (value) {
+      console.log('keydown--------', value)
     }
   }
 }

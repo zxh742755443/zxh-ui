@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import zxh from '@/components'
+import '@/theme/index.scss'
 
 Vue.config.productionTip = false
 Vue.use(zxh)

@@ -1,0 +1,72 @@
+.z-keyboard-fade{
+
+}
+
+.z-keyboard{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.z-keyboard__header{
+  background: #eee;
+  padding: 6px;
+  color: #999;
+
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.z-keyboard__cancel{
+  float: left;
+  line-height: 1.44;
+  padding: 5px;
+}
+
+.z-keyboard__confirm{
+  float: right;
+  line-height: 1.44;
+  padding: 5px;
+}
+
+.z-keyboard__content{
+  border-top: 1px solid #eee;
+}
+
+.z-keyboard__item{
+  width: 33.3333vw;
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+}
+
+.z-keyboard__text{
+  color: #606266;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+
+  &:active{
+    animation: ripple 1s linear;
+  }
+
+  .z-keyboard__text-delete{
+    height: 20px;
+  }
+}
+
+@keyframes ripple {
+  0%{
+    opacity: 0.5;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
