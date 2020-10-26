@@ -1,5 +1,14 @@
 <template>
-  <z-keyboard @keypress="keypress"/>
+  <div>
+    <input :value="value" readonly @click.stop="show"/>
+    <z-number-keyboard
+      v-model="value"
+      :visible="visible"
+      extra-key="X"
+      @input="onInput"
+      @delete="onDelete"
+      @blur="visible = false"/>
+  </div>
 </template>
 
 <script>
@@ -8,13 +17,19 @@ export default {
   name: 'App',
   data () {
     return {
-      num: 40,
-      disabled: false
+      value: '',
+      visible: false
     }
   },
   methods: {
-    keypress (value) {
-      console.log('keydown--------', value)
+    show (e) {
+      this.visible = true
+    },
+    onInput (value) {
+      console.log('key--------', value)
+    },
+    onDelete (value) {
+      console.log('delete--------', value)
     }
   }
 }

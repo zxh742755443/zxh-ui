@@ -1,5 +1,5 @@
 import InfiniteScroll from './infinite-scroll'
-import Keyboard from './keyboard'
+import Keyboard from './number-keyboard'
 
 const components = [
   Keyboard
