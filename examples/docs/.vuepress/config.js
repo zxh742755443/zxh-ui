@@ -10,7 +10,11 @@ module.exports = {
       },
       {
         path: '/infinite-scroll/',
-        title: 'InfiniteScroll 无限滚动'
+        title: '无限滚动'
+      },
+      {
+        path: '/number-keyboard/',
+        title: '数字键盘'
       }
     ]
   },
