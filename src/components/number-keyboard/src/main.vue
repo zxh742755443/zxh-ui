@@ -3,12 +3,13 @@
     <div class="z-number-keyboard" v-show="visible" ref="keyborder" @click.stop>
       <div class="z-number-keyboard__content">
         <div class="z-number-keyboard__item" v-for="(item,key) in keyList" :key="key">
-          <slot name="item" :scope="item">
-            <div class="z-number-keyboard__key" @click="onInput(item)">
-              <span v-if="item.type !== 'delete'">{{item.text}}</span>
+          <div class="z-number-keyboard__key" @click="onInput(item)">
+            <span v-if="item.type !== 'delete'">{{item.text}}</span>
+            <div v-else>
+              <slot v-if="$slots.delete" name="delete"></slot>
               <img v-else class="z-number-keyboard__key-delete" src="../assets/keyboard-delete.png" />
             </div>
-          </slot>
+          </div>
         </div>
       </div>
     </div>
@@ -46,6 +47,12 @@ export default {
   },
   mounted () {
     this.handler(true)
+  },
+  activated () {
+    this.handler(true)
+  },
+  deactivated () {
+    this.handler(false)
   },
   destroyed () {
     this.handler(false)

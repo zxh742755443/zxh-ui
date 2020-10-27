@@ -1,13 +1,15 @@
 <template>
   <div>
-    <input :value="value" readonly @click.stop="show"/>
+    <input :value="value" readonly @click.stop="show" placeholder="请输入"/>
     <z-number-keyboard
       v-model="value"
       :visible="visible"
       extra-key="X"
       @input="onInput"
       @delete="onDelete"
-      @blur="visible = false"/>
+      @blur="visible = false">
+      <div slot="delete">D</div>
+    </z-number-keyboard>
   </div>
 </template>
 
