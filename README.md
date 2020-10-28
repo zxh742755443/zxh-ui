@@ -2,29 +2,19 @@
 
 > ui project
 
-## Build Setup
+## Install
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+npm install zxh-ui -S
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Quick Start
+``` javascript
+import Vue from 'vue'
+import ZUI from 'zxh-ui'
+import 'zxh-ui/lib/styles/index.css'
+
+Vue.use(ZUI)
+```
+
+For more information, please refer to [Quick Start](https://zxh742755443.github.io/zxh-ui/) in our documentation.
