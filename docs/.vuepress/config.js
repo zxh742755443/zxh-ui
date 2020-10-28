@@ -1,5 +1,6 @@
 module.exports = {
   title: 'zxh ui',
+  base:'/zxh-ui/',
   description: '基于vue开发的常用组件',
   themeConfig:{
     repo: 'https://github.com/zxh742755443/zxh-ui',
