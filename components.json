@@ -1,0 +1,4 @@
+{
+  "infinite-scroll": "./src/components/infinite-scroll/index.js",
+  "number-keyboard": "./src/components/number-keyboard/index.js"
+}
