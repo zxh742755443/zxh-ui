@@ -12,8 +12,8 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "docs:dev": "vuepress dev examples/docs",
-    "docs:build": "vuepress build examples/docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "dist": "webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run css",
     "css": "gulp buildCss",
     "pub": "npm run dist && sh build/git-release.sh v0.0.2"
