@@ -1,32 +1,19 @@
 #!/usr/bin/env sh
-echo "start publish version: "$1
-if test "$(git rev-parse --abbrev-ref HEAD)" == "master";
-then
-  echo "current branch is master"
-  echo "start commit and push master"
-  git add -A
-  git commit -m "[master build] "$1
-  git push origin
-  echo "push success"
-  echo "copy master lib to lib_tmp"
-  mkdir lib_tmp
-  cp -rf lib/* lib_tmp
-  echo "check branch master-release"
-  git checkout master-release
-  echo "copy lib_tmp to master-release lib"
-  cp -rf lib_tmp/* lib
-  echo "start commit and push master-release"
-  git add -A
-  git commit -m "[master-release build] "$1
-  git push origin
-  echo "push master-release success"
-  echo "create tag...."
-  git tag -a $1 -m "version "$1
-  git push origin $1
-  echo "push tag success"
-  echo "remove lib_tmp"
-  rm -rf lib_tmp
-else
-  echo "current branch is not master"
+git checkout dev
+
+if test -n "$(git status --porcelain)"; then
+  echo 'Unclean working tree. Commit or stash changes first.' >&2;
   exit 128;
 fi
+
+if ! git fetch --quiet 2>/dev/null; then
+  echo 'There was a problem fetching your branch. Run `git fetch` to see more...' >&2;
+  exit 128;
+fi
+
+if test "0" != "$(git rev-list --count --left-only @'{u}'...HEAD)"; then
+  echo 'Remote history differ. Please pull changes.' >&2;
+  exit 128;
+fi
+
+echo 'No conflicts.' >&2;

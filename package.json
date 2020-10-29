@@ -1,23 +1,32 @@
 {
   "name": "zxh-ui",
   "version": "1.0.0",
-  "description": "ui project",
+  "description": "A Component Library for Vue.js.",
   "author": "zxh",
   "main": "lib/zxh-ui.common.js",
+  "homepage": "https://zxh742755443.github.io/zxh-ui/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zxh742755443/zxh-ui.git"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "unit": "jest --config test/unit/jest.conf.js --coverage",
-    "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "clean": "rimraf lib && rimraf test/**/coverage",
     "build": "node build/build.js",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "dist": "npm run clean && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run css",
+    "pub": "npm run dist && sh build/git-release.sh v0.0.1",
+    "clean": "rimraf lib && rimraf test/**/coverage",
+    "dist": "npm run clean && npm run lint && webpack --config build/webpack.config.js && webpack --config build/webpack.common.js && webpack --config build/webpack.component.js && npm run css",
     "css": "gulp buildCss",
-    "pub": "npm run dist && sh build/git-release.sh v0.0.2"
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "e2e": "node test/e2e/runner.js",
+    "test": "npm run unit && npm run e2e",
+    "lint": "eslint src/**/* test/**/* build/**/* --quiet"
   },
   "dependencies": {
     "throttle-debounce": "^2.3.0",
