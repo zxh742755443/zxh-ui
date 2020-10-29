@@ -1,6 +1,6 @@
 # zxh-ui
 
-> ui project
+> 基于vue开发的常用组件
 
 ## Install
 
