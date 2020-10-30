@@ -20,6 +20,9 @@ then
   git push origin master
   git tag -a $VERSION -m "version "$VERSION
   git push origin $VERSION
+  git checkout dev
+  git rebase master
+  git push origin dev
 
   if [[ $VERSION =~ "beta" ]]
   then
