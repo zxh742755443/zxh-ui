@@ -14,7 +14,8 @@ then
 
   # publish
   git push origin master
-  git push origin refs/tags/v$VERSION
+  git tag -a $VERSION -m "version "$VERSION
+  git push origin $VERSION
 
   if [[ $VERSION =~ "beta" ]]
   then
