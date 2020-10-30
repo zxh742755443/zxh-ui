@@ -12,6 +12,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Releasing $VERSION ..."
 
+  # build
+  VERSION=$VERSION npm run dist
+
   # publish
   git push origin master
   git tag -a $VERSION -m "version "$VERSION
