@@ -25,7 +25,7 @@ then
   git push origin refs/tags/v$VERSION
   git checkout dev
   git rebase master
-  git push eleme dev
+  git push -u origin dev
 
   if [[ $VERSION =~ "beta" ]]
   then

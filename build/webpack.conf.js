@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
-const config = require('./config');
-
 module.exports = {
   entry: {
     app: ['./src/components/index.js']
