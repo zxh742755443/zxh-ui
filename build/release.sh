@@ -14,11 +14,15 @@ then
 
   # build
   VERSION=$VERSION npm run dist
+  npm version $VERSION --message "[release] $VERSION"
 
   # publish
   git push origin master
   git tag -a $VERSION -m "version "$VERSION
   git push origin $VERSION
+  git checkout dev
+  git rebase master
+  git push origin dev
 
   if [[ $VERSION =~ "beta" ]]
   then
