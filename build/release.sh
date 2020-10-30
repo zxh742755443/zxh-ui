@@ -14,6 +14,7 @@ then
 
   # build
   VERSION=$VERSION npm run dist
+  npm version $VERSION --message "[release] $VERSION"
 
   # publish
   git push origin master
