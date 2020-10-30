@@ -14,27 +14,31 @@
 </template>
 
 <script>
+import { NumberKeyboard } from 'zxh-ui';
 
 export default {
   name: 'App',
-  data () {
+  components: {
+    ZNumberKeyboard: NumberKeyboard
+  },
+  data() {
     return {
       value: '',
       visible: false
-    }
+    };
   },
   methods: {
-    show (e) {
-      this.visible = true
+    show() {
+      this.visible = true;
     },
-    onInput (value) {
-      console.log('key--------', value)
+    onInput(value) {
+      console.log('key--------', value);
     },
-    onDelete (value) {
-      console.log('delete--------', value)
+    onDelete(value) {
+      console.log('delete--------', value);
     }
   }
-}
+};
 </script>
 
 <style>

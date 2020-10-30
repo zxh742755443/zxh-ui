@@ -8,7 +8,15 @@
     }],
     "stage-2"
   ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"],
+  "plugins": [
+    ["component", {
+      "libraryName": "zxh-ui",
+      "styleLibrary": {
+        "name": "styles",
+        "base": false
+      }
+    }]
+  ],
   "env": {
     "test": {
       "presets": ["env", "stage-2"],

@@ -1,7 +1,7 @@
-import InfiniteScroll from './src/main'
+import ZInfiniteScroll from './src/main';
 
-InfiniteScroll.install = function (Vue) {
-  Vue.directive(InfiniteScroll.name, InfiniteScroll)
-}
+ZInfiniteScroll.install = function(Vue) {
+  Vue.directive(ZInfiniteScroll.name, ZInfiniteScroll);
+};
 
-export default InfiniteScroll
+export default ZInfiniteScroll;

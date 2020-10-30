@@ -38,34 +38,34 @@ export default {
     }
   },
   computed: {
-    keyList () {
-      return this.genDefaultKeys()
+    keyList() {
+      return this.genDefaultKeys();
     }
   },
-  data () {
-    return {}
+  data() {
+    return {};
   },
-  mounted () {
-    this.handler(true)
+  mounted() {
+    this.handler(true);
   },
-  activated () {
-    this.handler(true)
+  activated() {
+    this.handler(true);
   },
-  deactivated () {
-    this.handler(false)
+  deactivated() {
+    this.handler(false);
   },
-  destroyed () {
-    this.handler(false)
+  destroyed() {
+    this.handler(false);
   },
   methods: {
-    genBasicKeys () {
-      const keys = []
+    genBasicKeys() {
+      const keys = [];
       for (let i = 1; i <= 9; i++) {
-        keys.push({ text: '' + i })
+        keys.push({ text: '' + i });
       }
-      return keys
+      return keys;
     },
-    genDefaultKeys () {
+    genDefaultKeys() {
       return [
         ...this.genBasicKeys(),
         {text: this.extraKey},
@@ -74,24 +74,24 @@ export default {
           text: 'delete',
           type: 'delete'
         }
-      ]
+      ];
     },
-    onBlur () {
-      this.$emit('blur')
+    onBlur() {
+      this.$emit('blur');
     },
-    onInput (item) {
-      let value = this.value
+    onInput(item) {
+      let value = this.value;
       if (item.type === 'delete') {
-        this.$emit('delete')
-        this.$emit('upddate:value', value.slice(0, value.length - 1))
-        return
+        this.$emit('delete');
+        this.$emit('upddate:value', value.slice(0, value.length - 1));
+        return;
       }
-      this.$emit('input', item.text)
-      this.$emit('upddate:value', value + item.text)
+      this.$emit('input', item.text);
+      this.$emit('upddate:value', value + item.text);
     },
-    handler (action) {
-      document[(action ? 'add' : 'remove') + 'EventListener']('click', this.onBlur)
+    handler(action) {
+      document[(action ? 'add' : 'remove') + 'EventListener']('click', this.onBlur);
     }
   }
-}
+};
 </script>
