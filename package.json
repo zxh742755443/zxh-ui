@@ -4,6 +4,8 @@
   "description": "A Component Library for Vue.js.",
   "author": "zxh",
   "main": "lib/zxh-ui.common.js",
+  "unpkg": "lib/index.js",
+  "style": "lib/styles/index.css",
   "homepage": "https://zxh742755443.github.io/zxh-ui/",
   "repository": {
     "type": "git",
