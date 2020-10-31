@@ -1,7 +1,11 @@
-import ZNumberKeyboard from './src/main.vue';
+import component from './src/main.vue';
+import service from './src/main.js';
 
-ZNumberKeyboard.install = function(Vue) {
-  Vue.component(ZNumberKeyboard.name, ZNumberKeyboard);
+export default {
+  install(Vue) {
+    Vue.component(component.name, component);
+    Vue.prototype.$numberkeyboard = service;
+  },
+  component,
+  service
 };
-
-export default ZNumberKeyboard;

@@ -1,6 +1,6 @@
 <template>
   <transition name="z-number-keyboard-fade">
-    <div class="z-number-keyboard" v-show="visible" ref="keyborder" @click.stop>
+    <div class="z-number-keyboard" v-show="show" ref="keyborder" @click.stop>
       <div class="z-number-keyboard__content">
         <div class="z-number-keyboard__item" v-for="(item,key) in keyList" :key="key">
           <div class="z-number-keyboard__key" @click="onInput(item)">
@@ -21,7 +21,7 @@ export default {
   name: 'ZNumberKeyboard',
   model: {
     prop: 'value',
-    event: 'upddate:value'
+    event: 'update:value'
   },
   props: {
     value: {
@@ -42,8 +42,15 @@ export default {
       return this.genDefaultKeys();
     }
   },
+  watch: {
+    visible: function(val) {
+      this.show = val;
+    }
+  },
   data() {
-    return {};
+    return {
+      show: this.visible
+    };
   },
   mounted() {
     this.handler(true);
@@ -78,16 +85,21 @@ export default {
     },
     onBlur() {
       this.$emit('blur');
+      this.callback && this.callback('blur');
     },
     onInput(item) {
       let value = this.value;
       if (item.type === 'delete') {
         this.$emit('delete');
-        this.$emit('upddate:value', value.slice(0, value.length - 1));
+        let text = value.slice(0, value.length - 1);
+        this.$emit('update:value', text);
+        this.callback && this.callback('delete');
         return;
       }
       this.$emit('input', item.text);
-      this.$emit('upddate:value', value + item.text);
+      let text = value + item.text;
+      this.$emit('update:value', text);
+      this.callback && this.callback('input', text);
     },
     handler(action) {
       document[(action ? 'add' : 'remove') + 'EventListener']('click', this.onBlur);
