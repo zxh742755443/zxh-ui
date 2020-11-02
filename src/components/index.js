@@ -1,8 +1,8 @@
 import InfiniteScroll from './infinite-scroll';
-import NumberKeyboard, {NumberKeyboardService} from './number-keyboard';
+import NumberKeyboard from './number-keyboard';
 
 const components = [
-  NumberKeyboard
+  NumberKeyboard.component
 ];
 
 function install(Vue) {
@@ -10,7 +10,7 @@ function install(Vue) {
   components.forEach(component => {
     Vue.component(component.name, component);
   });
-  Vue.prototype.$numberkeyboard = NumberKeyboardService;
+  Vue.prototype.$numberkeyboard = NumberKeyboard.service;
 }
 
 export default {

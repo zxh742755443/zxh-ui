@@ -2,11 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-import zxh from '@/components';
-import '@/theme/number-keyboard.scss';
+import ZUI from 'zxh-ui';
+import 'zxh-ui/lib/styles/index.css';
 
 Vue.config.productionTip = false;
-Vue.use(zxh);
+Vue.use(ZUI);
 
 /* eslint-disable no-new */
 new Vue({

@@ -162,7 +162,8 @@ export default {
 | -------------- | ------------------------------ |
 | delete | 删除键       |
 
-### 服务调用
+### 全局方法
+如果你完整引入了 `zxh-ui`，它会为 `Vue.prototype` 添加全局方法：`$numberkeyboard`。
 
 ::: demo
 ```html
@@ -202,3 +203,9 @@ export default {
 </script>
 ```
 :::
+
+#### Options
+| 参数           | 说明                           | 类型      | 可选值                               | 默认值  |
+| -------------- | ------------------------------ | --------- | ------------------------------------ | ------- |
+| extra-key | 底部额外按键的内容 | string   |- | . |
+| callback | 回调 | function(action, value)，action 的值为'input', 'delete'或'blur', value 为 按键内容   |- | - |

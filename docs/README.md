@@ -70,7 +70,7 @@ import {
   // ...
 } from 'zxh-ui'
 
-Vue.component(NumberKeyboard.name, NumberKeyboard)
+Vue.use(NumberKeyboard)
 
 new Vue({
   el: '#app',
