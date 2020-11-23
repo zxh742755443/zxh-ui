@@ -102,6 +102,6 @@ export default {
   },
   unbind(el) {
     let {container, onScroll} = el.scope;
-    container.removeEventListener('scroll', onScroll);
+    container && container.removeEventListener('scroll', onScroll);
   }
 };

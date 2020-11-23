@@ -16,6 +16,10 @@ module.exports = {
       {
         path: '/number-keyboard/',
         title: '数字键盘'
+      },
+      {
+        path: '/lazy-loading/',
+        title: '懒加载'
       }
     ]
   },

@@ -1,5 +1,6 @@
 import InfiniteScroll from './infinite-scroll';
 import NumberKeyboard from './number-keyboard';
+import LazyLoading from './lazy-loading';
 
 const components = [
   NumberKeyboard.component
@@ -7,6 +8,7 @@ const components = [
 
 function install(Vue) {
   Vue.use(InfiniteScroll);
+  Vue.use(LazyLoading);
   components.forEach(component => {
     Vue.component(component.name, component);
   });
