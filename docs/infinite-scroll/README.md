@@ -4,14 +4,14 @@
 滚动至底部时，加载更多数据。
 
 #### 基础用法
-在要实现滚动加载的列表上上添加 `v-infinite-scroll`，并赋值相应的加载方法，可实现滚动到底部时自动执行加载方法。
+在要实现滚动加载的列表上上添加 `v-z-infinite-scroll`，并赋值相应的加载方法，可实现滚动到底部时自动执行加载方法。
 
 ::: demo
 ```html
 <template>
   <div
     class="infinite-list"
-    v-infinite-scroll="test"
+    v-z-infinite-scroll="test"
     infinite-scroll-delay="20"
     infinite-scroll-distance="10"
   >
@@ -26,19 +26,18 @@
 <script>
 
 export default {
-  name: 'InfiniteScroll',
-  data () {
+  data() {
     return {
       num: 40
-    }
+    };
   },
   methods: {
-    test () {
-      console.log('test-----------', this)
-      this.num += 10
+    test() {
+      console.log('test-----------', this);
+      this.num += 10;
     }
   }
-}
+};
 </script>
 
 <style>
@@ -68,7 +67,7 @@ export default {
   <div>
     <div
       class="infinite-list"
-      v-infinite-scroll="test"
+      v-z-infinite-scroll="test"
       :infinite-scroll-disabled="disabled"
       infinite-scroll-delay="200"
       infinite-scroll-distance="10"
