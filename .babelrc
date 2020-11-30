@@ -15,7 +15,8 @@
         "name": "styles",
         "base": false
       }
-    }]
+    }],
+    "transform-runtime"
   ],
   "env": {
     "test": {
