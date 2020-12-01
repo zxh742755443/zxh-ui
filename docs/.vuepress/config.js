@@ -20,6 +20,10 @@ module.exports = {
       {
         path: '/lazy-loading/',
         title: '懒加载'
+      },
+      {
+        path: '/image-compress/',
+        title: '图片压缩'
       }
     ]
   },
